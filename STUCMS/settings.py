@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Peekpa.urls'
+ROOT_URLCONF = 'STUCMS.urls'
 
 TEMPLATES = [
     {
@@ -77,7 +77,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Peekpa.wsgi.application'
+WSGI_APPLICATION = 'STUCMS.wsgi.application'
 
 
 # Database
@@ -153,4 +153,4 @@ ONE_PAGE_NEWS_COUNT = 10
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_dist')
 
-PEEKPA_VERSION = "00.01.00"
+PEEKPA_VERSION = "0.1.1"
