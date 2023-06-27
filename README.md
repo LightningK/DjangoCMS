@@ -51,5 +51,5 @@ python manage.py createsuperuser # 按照提示操作
 python manage.py runserver
 ```
 
-5. 进入后台管理页面 http://localhost:8080/cms, 账号密码为上一步建立的。在后台的setting中设置网站的标题等信息。之后进入网站首页http://localhost:8080/ 进行查看。
+1. 初次运行时需要进入后台管理页面 http://localhost:8080/cms, 使用上一步创建的账号密码登录。在setting中设置网站的标题等信息。之后进入网站首页http://localhost:8080/ 进行查看。
 
