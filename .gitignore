@@ -5,7 +5,7 @@
 /Peekpa/__pycache__
 /apps/*/__pycache__
 /apps/*/*/__pycache__
-Peekpa/settings.py
+STUCMS/settings.py
 /front/node_modules
 
 /front/package-lock.json
