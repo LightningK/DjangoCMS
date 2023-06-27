@@ -16,6 +16,8 @@ from django.conf import settings
 from apps.peekpauser.decorators import peekpa_login_required, peekpa_login_superuser
 from apps.basefunction.global_peekpa import init_peekpa, get_peekpa_item
 from django.conf import settings
+from django import forms
+from apps.cms import models
 
 # Create your views here.
 
@@ -39,6 +41,33 @@ def cms_dashboard(request):
     context.update(get_dashboard_post_view_table(10))
     return render(request, 'cms/home/home.html', context=context)
 
+class SettingForm(forms.ModelForm):
+    class Meta:
+        model = models.PageSetting
+        fields = "__all__"
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        for name, field in self.fields.items():
+            # print(name, field)  # name: 字段  field：字段对应对象
+            field.widget.attrs = {"class": "form-control","style":"margin-top: 10px"}  # 给每个对象的添加样式插件
+
+@peekpa_login_required
+def cms_setting(request):
+
+    row_obj = models.PageSetting.objects.filter(id=1).first()
+
+    if request.method == "GET":
+        form = SettingForm(instance=row_obj)
+        return render(request, 'cms/setting/setting.html',{"form":form})
+
+    form = SettingForm(data=request.POST, instance=row_obj)
+    if form.is_valid():
+        print(form.cleaned_data)
+        form.save()
+        return redirect(reverse("cms:setting"))
+
+    return redirect('/404.html')
 
 @peekpa_login_required
 def category_manage_view(request):

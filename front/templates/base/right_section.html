@@ -6,13 +6,13 @@
     <!-- 公众号广告 -->
     <div class="row ml-1" style="background-color: white">
         <div class="col-sm-12 mt-4">
-            <p class="h5 border-bottom pb-2 mb-2"> STUCS </p>
+            <p class="h5 border-bottom pb-2 mb-2"> {{ ad_title }} </p>
         </div>
     </div>
 
     <div class="row ml-1" style="background-color: white;">
         <div class="col-sm-12 p-0 text-center pb-2">
-            <img src="{% static 'images/stu.png' %}" class="img-fluid" style="width:200px;height:200px;">
+            <img src={{ ad_image }} class="img-fluid" style="width:200px;height:200px;">
         </div>
     </div>
 

@@ -68,4 +68,6 @@ urlpatterns = [
     path("dashboard/feature/add", FeatureView.as_view(), name="feature_add"),
     path("dashboard/feature/edit", FeatureEditView.as_view(), name="feature_edit"),
     path("dashboard/feature/delete", FeatureDeleteView.as_view(), name="feature_delete"),
+
+    path("dashboard/setting", views.cms_setting, name = "setting"),
 ]

@@ -16,6 +16,7 @@
                 data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
+
                 {% url 'cms:dashboard' as cms_home_page %}
                 <li class="nav-item">
                     <a href="{{ cms_home_page }}" class="nav-link {% if request.path == cms_home_page %}active{% endif %}">
@@ -25,6 +26,7 @@
                         </p>
                     </a>
                 </li>
+
                 {% url 'cms:feature_manage_view' as feature_manage_view %}
                 {% url 'cms:feature_publish_view' as feature_publish_view %}
                 <li class="nav-item has-treeview {% if request.path == feature_manage_view or request.path == feature_publish_view %}menu-open{% endif %}">
@@ -270,6 +272,16 @@
                         </a>
                       </li>
                     </ul>
+                </li>
+
+                {% url 'cms:setting' as cms_setting_page %}
+                <li class="nav-item">
+                    <a href="{{ cms_setting_page }}" class="nav-link {% if request.path == cms_setting_page %}active{% endif %}">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Setting
+                        </p>
+                    </a>
                 </li>
             </ul>
         </nav>

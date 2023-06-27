@@ -1,6 +1,6 @@
 <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar bg-dark">
     <div class="collapse navbar-collapse pl-4 ml-4">
-        <a class="navbar-brand mr-4 " href="/"><p class="h2 mb-0"><b>CMS</b></p></a>
+        <a class="navbar-brand mr-4 " href="/"><p class="h2 mb-0"><b>{{ page_title }}</b></p></a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             {% url 'base:index' as index %}
             {% url 'post:post_list' as post_list %}
